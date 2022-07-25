@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kylieogg/readme-generator.git"
+    "url": "https://github.com/kylieogg/readme-generator.git"
   },
   "keywords": [],
   "author": "",
@@ -18,6 +18,6 @@
   },
   "homepage": "https://github.com/kylieogg/readme-generator#readme",
   "dependencies": {
-    "inquirer": "^9.0.2"
+    "inquirer": "^8.2.4"
   }
 }

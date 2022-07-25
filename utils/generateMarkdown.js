@@ -32,11 +32,11 @@ function generateMarkdown(data) {
   ${data.contribution}
 
   ## Testing:
-  ${data.testing}
+  ${data.tests}
 
   ## Contact Information:
-  - GitHub Profile:
-  - Email:
+  - GitHub Profile: ${data.github}
+  - Email: ${data.email}
 
 `;
 }
