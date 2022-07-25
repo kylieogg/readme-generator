@@ -4,92 +4,137 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown.js')
 
 // TODO: Create an array of questions for user input
-const questions = [];
+const questions = [
 
-// Array for user input
-const promptInput = () => {
-    console.log (``);
-
-    return inquirer.prompt([
         {
             // Project Title
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'title',
+            message: 'What is the title of the project? (Required)',
+            validate: titleInput => {
+                if (titleInput) {
+                    return true;
+                } else {
+                    console.log('Please enter a title for your project.');
+                    return false;
+                }
+            }
         },
 
         {
-            // Description
+            // Project description
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'description',
+            message: 'Enter a description of the project. (Required)',
+            validate: descriptionInput => {
+                if (descriptionInput) {
+                    return true;
+                } else {
+                    console.log('Please provide a description of the project.');
+                    return false;
+                }
+            }
 
-        },
-
-        {
-            // Table of Contents
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
         },
 
         {
             // Installation
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'installation',
+            message: 'How do you install this application? (Required)',
+            validate: installationInput => {
+                if (installationInput) {
+                    return true;
+                } else {
+                    console.log('Please enter installation instructions.');
+                    return false;
+                }
+            }
         },
 
         {
             // Usage
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'usage',
+            message: 'How is this application used? (Required)',
+            validate: usageInput => {
+                if (usageInput) {
+                    return true;
+                } else {
+                    console.log('Please enter application usage directions.');
+                    return false;
+                }
+            }
         },
 
         {
             // License Options
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'license',
+            message: 'Choose a license for your application. (Required)',
+            choices: ['Apache License 2.0', 'GNU General Public License', 'MIT License', 'Mozilla Public License 2.0', 'None'],
+            validate: licenseInput => {
+                if (licenseInput) {
+                    return true;
+                } else {
+                    console.log('Please choose a license for the application.');
+                    return false;
+                }
+            }
         },
 
         {
             // Contributing
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'contribution',
+            message: 'How can others contribute to this project?',
+            validate: contributionInput => {
+                if (contributionInput) {
+                    return true;
+                } else {
+                    console.log('Please provide information on how to contribute to this project.');
+                    return false;
+                }
+            }
         },
 
         {
             // Tests
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
-        },
-
-        {
-            // Questions
-            type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'tests',
+            message: 'How is this application tested? (Required)',
+            validate: testInput => {
+                if (testInput) {
+                    return true;
+                } else {
+                    console.log('Please explain how to test this application.');
+                    return false;
+                }
+            }
         },
 
         {
             // GitHub Username (link to GitHub profile)
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
+            name: 'github',
+            message: 'Please enter your GitHub username. (Required)',
+            validate: githubInput => {
+                if (githubInput) {
+                    return true;
+                } else {
+                    console.log('Please enter your GitHub username.');
+                    return false;
+                }
+            }
         },
 
         {
             // Email address (contained in Questions section)
             type: 'input',
-            name: 'name',
-            message: 'What is your name?'
-        }
-    ]);
-};
+            name: 'email',
+            message: 'Would you like to enter an email address for this application?',
+        },
+    ];
 
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {}
