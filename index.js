@@ -72,7 +72,7 @@ const questions = [
             type: 'input',
             name: 'license',
             message: 'Choose a license for your application. (Required)',
-            choices: ['Apache License 2.0', 'GNU General Public License', 'MIT License', 'Mozilla Public License 2.0', 'None'],
+            choices: ['Apache', 'GNU-General-Public', 'MIT', 'Mozilla-Public', 'None'],
             validate: licenseInput => {
                 if (licenseInput) {
                     return true;
@@ -142,7 +142,7 @@ function writeToFile(fileName, data) {
     fs.writeFile(fileName, data, (err) => {
     if (err) throw err;
     console.log('You have successfully created your README file!');
-    })
+    });
 };
 
 // Function to initialize app
