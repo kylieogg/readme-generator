@@ -84,7 +84,7 @@ const questions = [
         },
 
         {
-            // Contributing
+            // Contribution
             type: 'input',
             name: 'contribution',
             message: 'How can others contribute to this project?',
@@ -99,7 +99,7 @@ const questions = [
         },
 
         {
-            // Tests
+            // Testing
             type: 'input',
             name: 'tests',
             message: 'How is this application tested? (Required)',
